@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +30,6 @@ export class FirestoreService {
   public deleteReport(documentId: string) {
     return this.firestore.collection('report').doc(documentId).delete();
   }
-  
+
 
 }
