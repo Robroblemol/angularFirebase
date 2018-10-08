@@ -5,5 +5,29 @@ import { Injectable } from '@angular/core';
 })
 export class FirestoreService {
 
-  constructor() { }
+  constructor(
+    private firestore: AngularFirestore
+  ) { }
+  //crear reporte
+  public creatReport(data:{date: string, description: string, device: string, state: string}){
+    return this.firestore.collection('report').add(data);
+  }
+  //obtenemos un report
+  public getReport(documentId: string) {
+   return this.firestore.collection('report').doc(documentId).snapshotChanges();
+  }
+  //obtenemos todos los reportes
+  public getReports() {
+    return this.firestore.collection('report').snapshotChanges();
+  }
+  //Actualiza un report
+  public updateReport(documentId: string, data: any) {
+    return this.firestore.collection('report').doc(documentId).set(data);
+  }
+  //borrar un report
+  public deleteReport(documentId: string) {
+    return this.firestore.collection('report').doc(documentId).delete();
+  }
+  
+
 }

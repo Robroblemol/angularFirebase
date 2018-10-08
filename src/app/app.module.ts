@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+import { ReportsComponent } from './reports/reports.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule
