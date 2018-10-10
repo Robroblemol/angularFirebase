@@ -11,7 +11,8 @@ export class FirestoreService {
     private firestore: AngularFirestore
   ) { }
   //crear reporte
-  public creatReport(data:{date: string, description: string, device: string, state: string}){
+  //public creatReport(data:{date: string, description: string, device: string, state: string, id: string}){
+  public creatReport(data:any){
     return this.firestore.collection('report').add(data);
   }
   //obtenemos un report

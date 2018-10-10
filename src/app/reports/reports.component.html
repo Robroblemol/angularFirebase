@@ -3,7 +3,7 @@
     <div class="grd-row-col-2">
       <h1>Repotes de Mantenimiento</h1>
 
-      <form>
+      <form (ngSubmit)="newReport(newReportForm.value)" [formGroup]="newReportForm">
         <label for="device">Device</label>
           <input type="text" name="device">
           <label for="description">descripcion</label>
