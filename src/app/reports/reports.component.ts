@@ -31,15 +31,21 @@ export class ReportsComponent implements OnInit {
   }
 
   ngOnInit() {
+    // console.log('inicio?')
+    let i = 0;
     this.firestoreService.getReports().subscribe((reportsSnaphot)=>{
       this.reports = [];
       reportsSnaphot.forEach((reportData: any) => {
         this.reports.push({
           id: reportData.payload.doc.id,
-          data: reportData.payload.doc.data()
+          data: reportData.payload.doc.data(),
         });
+        console.log(`reports: ${this.reports[i].id}`)
+        i++;
       })
     });
+
+
   }
   public newReport(form, documentId = this.documentId) {
     console.log(`Status: ${this.currentStatus}`);
