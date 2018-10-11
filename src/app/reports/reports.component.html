@@ -13,14 +13,21 @@
           <input type="submit" class="btn--blue btn--add" value="Agregar">
       </form>
     </div>
-    <div class="grd-row-col-4">
+    <div>
       <div class="reports_container">
-        <div class="media" *ngFor="let report of reports">
-          <!-- <div class="media-title">
-            {{report.data.device}}
-          </div> -->
-          <div class="media-body">
+        <div class="card" *ngFor="let report of reports">
+          <div>
+            <h3>
+              {{report.data.device}}
+            </h3>
+          </div>
+          <div>
             <p>{{report.data.description}}</p>
+            <p>{{report.data.date}}</p>
+            <p>Estado: {{report.data.state}}</p>
+            <div>
+              <h5>revision: {{report.data.fix}}</h5>
+            </div>
             <div class="btn--group">
               <button class="btn--green btn--s btn1">Editar</button>
               <button class="btn--red btn--s btn2">Eliminar</button>
