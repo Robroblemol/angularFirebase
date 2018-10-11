@@ -5,11 +5,11 @@
 
       <form (ngSubmit)="newReport(newReportForm.value)" [formGroup]="newReportForm">
         <label for="device">Device</label>
-          <input type="text" name="device">
+          <input type="text" name="device" class="form-control">
           <label for="description">descripcion</label>
-          <input type="text" name="description">
+          <input type="text" name="description" class="form-control">
           <label for="state">Estado</label>
-          <input type="checkbox" name="state">
+          <input type="checkbox" name="state" class="form-control">
           <input type="submit" class="btn--blue btn--add" value="Agregar">
       </form>
     </div>

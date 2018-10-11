@@ -11,7 +11,7 @@ export class ReportsComponent implements OnInit {
 
   public documentId = null;
   public reports = [];
-    public currentStatus = 1;
+  public currentStatus = 1;
   public newReportForm = new FormGroup({
     device: new FormControl('', Validators.required),
     description: new FormControl('', Validators.required),
@@ -26,7 +26,6 @@ export class ReportsComponent implements OnInit {
       id: '',
       device: '',
       description: '',
-
     });
   }
 
@@ -40,31 +39,32 @@ export class ReportsComponent implements OnInit {
           id: reportData.payload.doc.id,
           data: reportData.payload.doc.data(),
         });
-        console.log(`reports: ${this.reports[i].id}`)
-        i++;
+          // console.log(`reports: ${this.reports[i].id}`)
+          // i++;
       })
     });
 
 
   }
   public newReport(form, documentId = this.documentId) {
-    console.log(`Status: ${this.currentStatus}`);
+    //console.log(`Status: ${this.currentStatus}`);
     if (this.currentStatus == 1) {
       let data = {
         device: form.device,
         description: form.description,
-        date:form.date,
-        state: form.state,
-        id: form.id,
+        // date:form.date,
+        // state: form.state,
+        // id: form.id,
       }
+
       this.firestoreService.creatReport(data).then(() => {
         console.log('Documento creado exitósamente!');
         this.newReportForm.setValue({
           device: '',
           description: '',
           id: '',
-          date: '',
-          state: '',
+          // date: '',
+          // state: '',
 
         });
       }, (error) => {

@@ -17,6 +17,7 @@ import { FirestoreService } from './services/firestore/firestore.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
