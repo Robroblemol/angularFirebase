@@ -29,8 +29,8 @@
               <h5>revision: {{report.data.fix}}</h5>
             </div>
             <div class="btn--group">
-              <button class="btn--green btn--s btn1">Editar</button>
-              <button class="btn--red btn--s btn2">Eliminar</button>
+              <button class="btn--green btn--s btn1" (click)="editReport(report.id)">Editar</button>
+              <button class="btn--red btn--s btn2"(click)="deleteReport(report.id)">Eliminar</button>
             </div>
           </div>
         </div>

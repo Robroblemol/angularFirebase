@@ -64,9 +64,6 @@ export class ReportsComponent implements OnInit {
           device: '',
           description: '',
           id: '',
-          // date: '',
-          // state: '',
-
         });
       }, (error) => {
         console.error(error);
@@ -89,6 +86,27 @@ export class ReportsComponent implements OnInit {
         console.log(error);
       });
     }
+  }
+
+  public editReport(documentId) {
+    console.log(`id: ${documentId}`)
+    let editSubscribe = this.firestoreService.getReport(documentId).subscribe((report) => {
+      this.currentStatus = 2;
+      this.documentId = documentId;
+      this.newReportForm.setValue({
+        id: documentId,
+        device: report.payload.data().device,
+        description: report.payload.data().description,
+      });
+      editSubscribe.unsubscribe();
+    });
+  }
+  public deleteReport(documentId) {
+    this.firestoreService.deleteReport(documentId).then(() => {
+      console.log('Documento eliminado!');
+    }, (error) => {
+      console.error(error);
+    });
   }
 
 }
