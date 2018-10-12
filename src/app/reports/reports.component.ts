@@ -56,6 +56,7 @@ export class ReportsComponent implements OnInit {
         // state: form.state,
         // id: form.id,
       }
+      console.log(`Device: ${form.device} Description: ${form.description}`);
 
       this.firestoreService.creatReport(data).then(() => {
         console.log('Documento creado exitósamente!');
@@ -70,7 +71,8 @@ export class ReportsComponent implements OnInit {
       }, (error) => {
         console.error(error);
       });
-    } else {
+    }
+    else {
       let data = {
         device: form.device,
         description: form.description
