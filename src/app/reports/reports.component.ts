@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { FirestoreService } from '../services/firestore/firestore.service';
 import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ReportComponent } from "../report/report.component";
 
 @Component({
   selector: 'app-reports',
@@ -8,6 +9,7 @@ import { Form, FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./reports.component.css']
 })
 export class ReportsComponent implements OnInit {
+  //@ViewChild('report') childReport:ReportComponent;
 
   public documentId = null;
   public reports = [];
@@ -43,7 +45,6 @@ export class ReportsComponent implements OnInit {
           // i++;
       })
     });
-
 
   }
   public newReport(form, documentId = this.documentId) {

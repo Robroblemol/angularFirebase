@@ -15,22 +15,13 @@
     </div>
     <div>
       <div class="container">
-        <div class="card" *ngFor="let report of reports">
-          <div class = "card-header">
-            Reporte mantenimiento
-          </div>
-          <div class="card-body">
-            <h2 class="card-title">
-              {{report.data.device}}
-            </h2>
-            <p class="card-text">{{report.data.description}}</p>
-            <p>Estado: {{report.data.state}}</p>
-            <h5>revision: {{report.data.fix}}</h5>
-            <div class="btn--group">
-              <button class="btn btn-primary" (click)="editReport(report.id)">Editar</button>
-              <button class="btn btn-secundary"(click)="deleteReport(report.id)">Eliminar</button>
-            </div>
-          </div>
+        <div class="card">
+          <app-report *ngFor="let report of reports"
+          device = {{report.data.device}}
+          description = {{report.data.description}}
+          state = {{report.data.state}}
+          fix = {{report.data.fix}}
+          ></app-report>
         </div>
       </div>
     </div>

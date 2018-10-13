@@ -9,11 +9,13 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { ReportsComponent } from './reports/reports.component';
 import { FirestoreService } from './services/firestore/firestore.service';
+import { ReportComponent } from './report/report.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReportsComponent
+    ReportsComponent,
+    ReportComponent
   ],
   imports: [
     BrowserModule,
