@@ -1,38 +1,40 @@
-<div class="grd">
-  <div class="grd-row">
-    <div class="grd-row-col-2">
-      <h1>Repotes de Mantenimiento</h1>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="grd">
+          <div class="grd-row">
+            <h1 class="card-title">Reportes de Mantenimiento</h1>
+            <form (ngSubmit)="newReport(newReportForm.value)" [formGroup]="newReportForm">
+              <label for="device">Device:</label>
+                <input type="text" name="device" formControlName="device">
+                <label for="description">descripcion:</label>
+                <input type="text" name="description" formControlName="description">
+                <label for="state">Estado:</label>
+                <input type="checkbox" name="state" class="form-control">
+                <button class="btn btn-primary" (click)="newReport(report.id)">Agregar</button>
 
-      <form (ngSubmit)="newReport(newReportForm.value)" [formGroup]="newReportForm">
-        <label for="device">Device</label>
-          <input type="text" name="device" formControlName="device">
-          <label for="description">descripcion</label>
-          <input type="text" name="description" formControlName="description">
-          <label for="state">Estado</label>
-          <input type="checkbox" name="state" class="form-control">
-          <input type="submit" class="btn--blue btn--add" value="Agregar">
-      </form>
-    </div>
-    <div>
-      <div class="container">
-        <div class="card" *ngFor="let report of reports">
-          <div class = "card-header">
-            Reporte mantenimiento
+            </form>
           </div>
-          <div class="card-body">
-            <h2 class="card-title">
-              {{report.data.device}}
-            </h2>
-            <p class="card-text">{{report.data.description}}</p>
-            <p>Estado: {{report.data.state}}</p>
-            <h5>revision: {{report.data.fix}}</h5>
-            <div class="btn--group">
-              <button class="btn btn-primary" (click)="editReport(report.id)">Editar</button>
-              <button class="btn btn-secundary"(click)="deleteReport(report.id)">Eliminar</button>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="container">
+          <div class="card" *ngFor="let report of reports">
+            <div class="card-header">
+              Reporte mantenimiento
             </div>
+            <div class="card-body">
+              <h2 class="card-title">
+                {{report.data.device}}
+              </h2>
+              <p class="card-text">{{report.data.description}}</p>
+              <p>Estado: {{report.data.state}}</p>
+              <h5>revision: {{report.data.fix}}</h5>
+              <div class="btn--group">
+                <button class="btn btn-primary" (click)="editReport(report.id)">Editar</button>
+                <button class="btn btn-secundary"(click)="deleteReport(report.id)">Eliminar</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
+      </div>
+        </div>
