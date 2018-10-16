@@ -1,9 +1,41 @@
+.h1{
+font-weight: bold;
+}
 
 
+.col-lg-2 {
+    font-weight: bold;
+    color: #444;
+    font-size: 14px;
+    float:none;
+    margin: 15px auto;
+    align-content: center;
+
+
+}
+
+.input[type=text], textarea{
+    padding: 4px 3px;
+    border: 1px solid #aaa;
+    background: #fff;
+    width: 40%;
+    resize: none;
+    vertical-align:top;
+}
+
+
+.mantenimiento{
+  width: 80%;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
 .reports_container {
+
   border-left: 4px solid #2d94da;
   padding-left: 10px;
   margin-left: 10px;
+
 }
 
 .btn--group .btn1 {
@@ -17,6 +49,14 @@
 .btn--add {
   border-radius: 30px 0px 0px 30px;
 }
+
+
+.trans{
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
 card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -31,5 +71,6 @@ card {
 /* Add some padding inside the card container */
 .container {
     padding: 2px 10px;
+
 
 }

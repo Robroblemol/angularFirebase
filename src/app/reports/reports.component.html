@@ -2,16 +2,27 @@
       <div class="col-sm-6">
         <div class="grd">
           <div class="grd-row">
-            <h1 class="card-title">Reportes de Mantenimiento</h1>
+            <br>
+            <h1 align="center" class="card-title">Reportes de Mantenimiento</h1>
+            <img class="mantenimiento" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSys7hyPhp2hR5Tfj1XDcWTfl3FEHa8P28giAvUu29eDdsWIzCT9g" alt="Card image cap">
             <form (ngSubmit)="newReport(newReportForm.value)" [formGroup]="newReportForm">
-              <label for="device">Device:</label>
-                <input type="text" name="device" formControlName="device">
-                <label for="description">descripcion:</label>
-                <input type="text" name="description" formControlName="description">
-                <label for="state">Estado:</label>
-                <input type="checkbox" name="state" class="form-control">
-                <button class="btn btn-primary" (click)="newReport(report.id)">Agregar</button>
+              <div>
 
+              <label class="col-lg-2" for="device">Device:</label>
+              <input type="text" name="device" formControlName="device">
+            </div>
+            <div>
+                <label class="col-lg-2" for="description">Descripcion:</label>
+                <textarea  name="description" formControlName="description" cols="30" rows="5"></textarea><br>
+                <!-- <input type="text" name="description" formControlName="description"> -->
+            </div>
+            <div>
+                <label class="col-lg-2" for="state">Estado:</label>
+                <input type="checkbox" name="state" class="form-control">
+            </div >
+            <div class="trans">
+                <button class="btn btn-primary" (click)="newReport(report.id)">Agregar</button>
+            </div>
             </form>
           </div>
         </div>
